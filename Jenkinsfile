@@ -1,27 +1,27 @@
-pipeline {
+echo 'pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage("Clone Repo") {
             steps {
-                echo 'Cloning the repository...'
+                echo "Cloning repository..."
+                // Already done by Jenkins if using SCM
             }
         }
-        stage('Build') {
+
+        stage("Build") {
             steps {
-                echo 'Building...'
+                echo "Simulating build..."
+                sh "ls -l"
             }
         }
-        stage('Test') {
+
+        stage("Deploy") {
             steps {
-                echo 'Running tests...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
+                echo "Deploy step (placeholder)..."
+                // Add deployment script here
             }
         }
     }
-}
+}' > Jenkinsfile
 
