@@ -2,25 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage("Clone Repo") {
+        stage('Clone Repo') {
             steps {
-                echo "Cloning repository..."
-                // Already done by Jenkins if using SCM
+                git 'https://github.com/Shinde06/jenkins-demo.git'
             }
         }
 
-        stage("Build") {
+        stage('Build') {
             steps {
-                echo "Simulating build..."
-                sh "ls -l"
+                echo 'Build Step (placeholder)'
             }
         }
 
-        stage("Deploy") {
+        stage('Deploy') {
             steps {
-                echo "Deploy step (placeholder)..."
-                // Add deployment script here
+                echo 'Deploying index.html to Apache...'
+                sh 'cp index.html /var/www/html/index.html'
             }
         }
     }
 }
+
