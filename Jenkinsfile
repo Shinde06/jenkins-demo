@@ -2,22 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Clone') {
             steps {
-                git 'https://github.com/Shinde06/jenkins-demo.git'
+                echo 'Cloning the repository...'
             }
         }
-
         stage('Build') {
             steps {
-                echo 'Build Step (placeholder)'
+                echo 'Building...'
             }
         }
-
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
         stage('Deploy') {
             steps {
-                echo 'Deploying index.html to Apache...'
-                sh 'cp index.html /var/www/html/index.html'
+                echo 'Deploying...'
             }
         }
     }
